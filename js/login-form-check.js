@@ -35,17 +35,14 @@ $(document).ready(function(){
     		} else if (!(_pattern.test(_mailReady)))  {      // проверяем правильный формат email
     			_errorFormatEmail.fadeIn(1000);      // показываем ошибку неверный формат email
     			event.preventDefault();              //отменяем стандартное поведение
+   		 } else if (_mailReady != "mail@mail.com" && _mailReady.length > 0 || _passReady != 123 && _passReady.length > 0) {
+   		 	_errorEmailOrPassword.fadeIn(1000);    // показываем ошибку неверный логин или пароль
+    				event.preventDefault();           //отменяем стандартное поведение
    		 }
 
    		 if (_passReady =='') {                 //Если пароль пустой
     			_errorEnterPass.fadeIn(1000);    // показываем блок с ошибкой пароля
     			event.preventDefault();          //отменяем стандартное поведение
-    		}
-
-    		  // если логин и пароль не верны
-    		if (_mailReady != "mail@mail.com" && _mailReady.length > 0 || _passReady != 123 && _passReady.length > 0) { 
-    			_errorEmailOrPassword.fadeIn(1000);    // показываем ошибку неверный логин или пароль
-    				event.preventDefault();           //отменяем стандартное поведение
     		}
 
     		_mail.on("focus", function(){         // по фокусу убираем блоки с ошибками
