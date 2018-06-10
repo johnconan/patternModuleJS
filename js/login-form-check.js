@@ -10,9 +10,8 @@ $(document).ready(function(){
 		var _errorFormatEmail = $('#error-format-email');
 		var _errorEnterPass = $('#error-enter-password');
 		var _errorEmailOrPassword = $('#error-mail-or-password,#error-mail-or-password-text');
-		_mail = $('[name="name"]');
+		_mail = $('[name="email"]');
 		_password = $('[name="password"]');
-
 		// Метод инициализации (запуска) модуля
 		var init = function(){
 			_setUpListeners(); // Запускаем прослушку событий
@@ -43,13 +42,12 @@ $(document).ready(function(){
     			event.preventDefault();          //отменяем стандартное поведение
     		}
 
-    		 
-    		if (_mailReady != "mail@mail.com" && _passReady != 123) {  // если логин и пароль не верны
+    		  // если логин и пароль не верны
+    		if (_mailReady != "mail@mail.com" && _mailReady.length > 0 || _passReady != 123 && _passReady.length > 0) { 
     			_errorEmailOrPassword.fadeIn(1000);    // показываем ошибку неверный логин или пароль
     				event.preventDefault();           //отменяем стандартное поведение
     		}
 
-    		
     		_mail.on("focus", function(){         // по фокусу убираем блоки с ошибками
     			_errorEnterEmail.fadeOut(1000);   // убираем ошибку введите email
     			_errorFormatEmail.fadeOut(1000);  // убираем ошибку неверный формат email
