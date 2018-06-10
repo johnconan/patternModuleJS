@@ -1,6 +1,6 @@
 $(document).ready(function(){
 
-	var myModule = (function(){
+	var commentCheck = (function(){
 
 		// Переменные модуля
 		var _form = $('#comment-add-form');
@@ -40,6 +40,6 @@ $(document).ready(function(){
 	}());
   
 	// Запускаем модуль
-	myModule.init();
+	commentCheck.init();
 
 });
