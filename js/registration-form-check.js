@@ -10,7 +10,7 @@ $(document).ready(function(){
 		var _errorFormatEmail = $('#error-format-email');
 		var _errorEnterPass = $('#error-enter-password');
 		var _errorBusy = $('#error-mail-busy, #error-mail-busy-text');
-		_mail = $('[name="name"]');
+		_mail = $('[name="email"]');
 		_password = $('[name="password"]');
 
 		// Метод инициализации (запуска) модуля
